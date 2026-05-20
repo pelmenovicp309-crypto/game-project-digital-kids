@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Моя Tower Defense Гра</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0;
+            background-color: #1a1a1a; 
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Головна рамка гри */
+        #game-box {
+            position: relative;
+            border: 3px solid #00ffff; /* Зробив неоновий синій */
+            border-radius: 5px;
+            background-color: #222;
+        }
+
+        canvas { 
+            display: block; 
+        }
+
+        /* Бокова панелька зі статами та кнопками */
+        .menu-panel {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border: 2px solid #00ffff;
+            color: white;
+            border-radius: 8px;
+            width: 180px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-buy { 
+            cursor: pointer; 
+            border: 1px solid #00ffff; 
+            padding: 10px; 
+            text-align: center; 
+            background: #333;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn-buy:hover { 
+            background: #444; 
+        }
+
+        .info-block {
+            margin-bottom: 15px;
+            font-size: 14px;
+            border-left: 3px solid #ff0055;
+            padding-left: 8px;
+        }
+
+        /* Кнопка запуску хвиль */
+        #wave-button {
+            width: 100%;
+            background: #00ff66;
+            color: black;
+            border: none;
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #wave-button:hover { background: #00cc52; }
+        #wave-button:disabled { background: #555; color: #aaa; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+
+    <div id="game-box">
+        <div class="menu-panel">
+            <div class="btn-buy">
+                <span>🏰 Купити вежу (50$)</span>
+            </div>
+            
+            <div class="info-block">
+                <div>Гроші: <span id="gold">100</span>$</div>
+                <div>Життя бази: <span id="health-display">10</span></div>
+            </div>
+
+            <button id="wave-button" onclick="startNextWave()">Запуск хвилі 1</button>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
