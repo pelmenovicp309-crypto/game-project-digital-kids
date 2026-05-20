@@ -1,0 +1,7 @@
+
+const GAME_SETTINGS = {
+    START_MONEY: 200,
+    TOWER_COST: 50,
+    ENEMY_SPEED: 1.5,
+    WAVE_COUNT: 10
+}
